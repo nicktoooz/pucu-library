@@ -1,0 +1,57 @@
+.preview {
+  flex: 0;
+  overflow-y: scroll;
+  color: #eee;
+  background-color: #333;
+}
+
+.image-container {
+  width: 10em;
+  height: 15em;
+}
+
+.image-container img {
+  border-radius: 5px;
+  height: 15em;
+}
+.scrollable {
+  display: flex;
+  padding-top: 2em;
+  flex-direction: column;
+}
+.preview .top,
+.preview .mid {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.preview .mid {
+  font-size: 1.2em;
+  line-height: 0.25em;
+}
+.preview .bottom {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.preview #title {
+  max-width: 8em;
+  text-align: end;
+  margin: 0;
+}
+
+.preview #author {
+  text-align: end;
+}
+.preview .action-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.action-buttons #availability {
+  width: 10em;
+}
+.action-buttons #edit,
+.action-buttons #delete {
+  cursor: pointer;
+}

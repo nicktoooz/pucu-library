@@ -1,0 +1,22 @@
+@import url(/fonts/product-sans-font.css);
+body{
+    margin: 0;
+    font-family: 'Product Sans Regular';
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+*{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */  
+}
+.wrapper{
+    height: 100vh;
+
+}
+header{
+    height: 4em;
+    background-color: #333;
+    color: white;
+}
+

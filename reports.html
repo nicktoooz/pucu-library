@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+    <style>
+      @import url(/fonts/product-sans-font.css);
+      body {
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .horizontal-container {
+        display: flex;
+        justify-content: space-between;
+      }
+      * {
+        font-family: 'Product Sans Regular';
+      }
+      header {
+        height: 4em;
+        background-color: #333;
+        color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+      header select {
+        font-size: 1.5em;
+        padding: 0.3em 1em;
+        background-color: #eee;
+        color: #333;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+      }
+      main {
+        flex: 1;
+      }
+      .grid-container {
+        display: grid;
+        height: 30em;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 4em;
+      }
+      .grid-item {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+      .grid-item h1 {
+        margin: 0;
+        display: inline;
+      }
+      .status-container {
+        display: flex;
+        height: 100%;
+      }
+      .canvas-container {
+        flex: 1;
+      }
+      .canvas-container canvas {
+        width: 100%;
+      }
+      .info-container {
+        flex: 0.7;
+      }
+      .horizontal-container h2 {
+        font-family: 'Product Sans light';
+      }
+      #totalReturn,
+      #totalLateReturn,
+      #totalActiveTransactions,
+      #totalIncomingRequests {
+        font-family: 'Product Sans Bold';
+      }
+      
+      .inventory-canvas-container{
+        display: flex;
+        flex: 1;
+      }
+      .inventory-canvas-container canvas{
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Reports</h1>
+      <select name="" id="monthFilter">
+        <option value="">All Time</option>
+      </select>
+    </header>
+    <main>
+      <div class="grid-container">
+        <div class="grid-item">
+          <h1>Total Borrow Transactions</h1>
+          <div class="status-container">
+            <div class="canvas-container">
+              <canvas id="doughnut"></canvas>
+            </div>
+            <div class="info-container">
+              <div class="horizontal-container">
+                <h2>Total Return:&nbsp;</h2>
+                <h2 id="totalReturn"></h2>
+              </div>
+              <div class="horizontal-container">
+                <h2>Late Returns: &nbsp;</h2>
+                <h2 id="totalLateReturn"></h2>
+              </div>
+              <div class="horizontal-container">
+                <h2>Active Transactions:&nbsp;</h2>
+                <h2 id="totalActiveTransactions"></h2>
+              </div>
+              <div class="horizontal-container">
+                <h2>Active Overdue: &nbsp;</h2>
+                <h2 id="totalOverdue"></h2>
+              </div>
+              <div class="horizontal-container">
+                <h2>Incoming Requests:&nbsp;</h2>
+                <h2 id="totalIncomingRequests"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <h1>Inventory Status</h1>
+          <div class="status-container">
+            <div class="inventory-canvas-container">
+              <canvas id="inventory-canvas"></canvas>
+            </div>
+            <div class="info-container">
+              <div class="horizontal-container">
+                <h2>Acquired Books: &nbsp;</h2>
+                <h2 id="totalAcquired"></h2>
+              </div>
+              <div class="horizontal-container">
+                <h2>Released Books: &nbsp;</h2>
+                <h2 id="totalRelease"></h2>
+              </div>
+              <div class="horizontal-container">
+                <h2>Lost Books: &nbsp;</h2>
+                <h2 id="totalLostBooks"></h2>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/firebase/functions/reports/reports.js"></script>
+  </body>
+</html>

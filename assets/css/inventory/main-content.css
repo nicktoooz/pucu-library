@@ -1,0 +1,291 @@
+@import url(/fonts/product-sans-font.css);
+*::-webkit-scrollbar {
+  display: none;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Product Sans Regular';
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+header {
+  height: 4em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #eee;
+  background-color: #333;
+}
+header h1 {
+  margin: 0;
+  margin-left: 0.5em;
+}
+main {
+  flex: 1;
+  background-color: #f0f0f4;
+  display: flex;
+  overflow: hidden;
+}
+.main-container {
+  flex: 2.2;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.filter-section {
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.filter-section select {
+  height: 70%;
+  width: 8em;
+  padding-left: 1ch;
+  font-size: 1.3em;
+  border-radius: 5px;
+  border: transparent;
+  background-color: #333;
+  color: #eee;
+}
+.search-box {
+  display: flex;
+  height: 70%;
+  overflow: hidden;
+  border-radius: 0 5px 5px 0;
+}
+.search-box input,
+.search-box button {
+  border: none;
+}
+.search-box input[type='submit'] {
+  background-color: #333;
+  color: #eee;
+}
+
+.search-box input {
+  font-size: 1.2em;
+  padding-left: 1ch;
+  background-color: transparent;
+  border-bottom: 3px solid #333;
+}
+
+.search-box input:focus,
+.search-box button:focus {
+  outline: none;
+}
+.list-container {
+  overflow-y: scroll;
+  flex: 1;
+  padding-top: 0.5em;
+}
+
+.list-container .list {
+  background-color: #e7e7ed;
+  height: 4em;
+  color: #333;
+  border-radius: 5px;
+  position: relative;
+  width: 98%;
+  cursor: pointer;
+  margin-left: 1%;
+  box-shadow: 2px 2px 4px #cccccc;
+  transition: scale 0.5s ease;
+}
+.list:hover {
+  scale: 1.02;
+}
+.list-container .list::before {
+  content: '';
+  position: absolute;
+  background-color: #adadad;
+  bottom: 0;
+  height: 1px;
+  width: 90%;
+  transform: translateX(5%);
+}
+.list-container .list p {
+  margin: 0;
+}
+.list #title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 1em;
+  padding-top: 0.2em;
+}
+.list #bookId {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 1em;
+  padding-top: 0.2em;
+}
+.list #author {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 1em;
+  padding-bottom: 0.2em;
+}
+.list #genre {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 1em;
+  padding-bottom: 0.2em;
+}
+
+.overlay {
+  background-color: #000000d3;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  height: 45em;
+  width: 60em;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.book-cover {
+  width: 15em;
+  height: 20em;
+  position: relative;
+  background-color: grey;
+  border-radius: 5px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.book-cover img{
+  height: 100%;
+}
+.overlay-content form {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.overlay-content form input {
+  height: 3em;
+  width: 20em;
+  border-radius: 5px;
+  padding-left: 1ch;
+  position: relative;
+}
+.overlay-content form input:focus-visible {
+  outline: none;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  margin-top: 1em;
+  justify-content: space-around;
+}
+#change-image {
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0.5em;
+  border-radius: 50%;
+  background-image: url(/images/inventory/add-image.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #333;
+}
+
+#close-btn {
+  width: 5em;
+  height: 2.5em;
+  background-color: red;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#add-book {
+  height: 4em;
+  width: 4em;
+  background-color: #222;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.5s ease;
+  overflow: hidden;
+  background-image: url(/images/inventory/add-image.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#add-book:hover {
+  opacity: 1;
+}
+#change-image input[type='file'] {
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+.overlay header{
+  height: 4em;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+}
+.overlay form .centre{
+  display: flex;
+  margin-top: 1em;
+  gap: .5em;
+  flex-direction: column;
+}
+.overlay form .centre select{
+  font-size: 1.2em;
+  font-family: 'Product Sans Regular';
+  padding: .5em;
+}
+.overlay form textarea{
+  border-radius: 5px;
+  height: 10em;
+  margin-top: .25%;
+  font-family: 'Product Sans Regular';
+}
+.overlay form textarea:focus-visible{
+  outline: none;
+}
+.overlay form input[name='acquisition-date']{
+}
+#submit-btn{
+  position: absolute;
+  font-size: 1.2em;
+  bottom: 0;
+  right: 0;
+  width: 10em;
+  margin-right: 7%;
+  margin-bottom: 6%;
+  border: none;
+  background-color: #333;
+  color: #eee;
+  padding: .5em 1em;
+  border-radius: 5px;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-Up</title>
+    <link rel="stylesheet" href="assets/css/sign-up/sign-up.css" />
+    <link rel="stylesheet" href="assets/css/sign-up/sign-up_1.css" />
+    <link rel="stylesheet" href="assets/css/sign-up/sign-up_2.css" />
+    <link rel="stylesheet" href="assets/css/sign-up/sign-up_3.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="side-design">
+        <div class="title-sec">
+          <h1>The Library</h1>
+          <h4>Sign-Up</h4>
+          <h2 id="context">Getting Started</h2>
+        </div>
+      </aside>
+      <div class="sign-up-main-container">
+        <div class="sign-up-card page-1">
+          <form action="" id="credentials-form">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email Address" />
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" />
+          </form>
+          <button class="nav-btn" id="nav-page-2">Next</button>
+        </div>
+        <div class="sign-up-card page-2">
+          <form action="" id="user-info-form">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" id="firstname" placeholder="First Name" />
+            <label for="middlename">Middle Name</label>
+            <input type="text" name="middlename" id="middlename" placeholder="Middle Name" />
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" placeholder="Last Name" />
+            <label for="birthdate">BirthDate</label>
+            <input type="date" name="birthdate" id="birthdate" placeholder="Birthdate" />
+            <label for="gender">Gender</label>
+            <div class="temp">
+              <select name="gender" id="gender">
+                <option value="">Gender</option>
+                <option value="">Male</option>
+                <option value="">Female</option>
+              </select>
+              <label for="phone" id="phone-label">Phone Number</label>
+              <input type="text" name="phone" id="phone" placeholder="Phone Number" />
+            </div>
+            <button class="nav-btn" id="nav-page-3">Next</button>
+          </form>
+        </div>
+        <div class="sign-up-card page-3">
+          <form action="" id="work-details">
+            <label for="fid">Faculty ID</label>
+            <input type="text" name="start" id="facultyID" placeholder="Enter Faculty ID" />
+            <div class="time-container">
+              <div class="col">
+                <label for="start">Time In</label>
+                <input type="time" name="start" id="timeIn" placeholder="Time In" />
+              </div>
+              <div class="col">
+                <label for="start">Time Out</label>
+                <input type="time" name="start" id="timeOut" placeholder="Time Out" />
+              </div>
+            </div>
+            <label for="name">Schedule</label>
+            <input type="text" name="schedule" id="schedule" placeholder="Enter Weekly Schedule ex. 'M, W, F'" />
+          </form>
+          <button class="nav-btn" id="nav-page-4">Finish</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="firebase/sign-up.js"></script>
+    <script type="module" src="/firebase/auth.js"></script>
+  </body>
+</html>

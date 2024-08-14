@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Library - Login</title>
+    <link rel="stylesheet" href="assets/css/login_page.css" />
+  </head>
+  <body>
+    <div class="login-box">
+      <div class="design-panel">
+        <img id="upang-logo" src="images/upang_logo_only.svg" alt="" />
+      </div>
+      <div class="login-form-container">
+        <img src="images/upang_logo.png" alt="" />
+        <h2>Library Management System</h2>
+        <form id="login-form">
+          <div class="email-container">
+            <input type="text" name="email" id="email" required />
+            <label for="email">Email Address</label>
+          </div>
+          <div class="password-container">
+            <input type="password" name="password" id="password" required />
+            <label for="password">Password</label>
+          </div>
+          <input type="submit" value="Login" id="login_btn" />
+        </form>
+        <div class="filler"></div>
+        <p id="sign-up">
+          <span><a href="/sign_up.html">Create an Account</a></span>
+        </p>
+      </div>
+    </div>
+    <script type="module" src="/firebase/login.js"></script>
+  </body>
+</html>

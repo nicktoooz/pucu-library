@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/active/active.css" />
+  </head>
+  <body>
+    <style>
+      .info-section{
+        flex: 1;
+        padding-top: 2em;
+      }
+      
+    </style>
+    <div class="overlay">
+      <div class="card">
+        <div id="close-btn"></div>
+
+        <div class="book-list-container"></div>
+        <div class="info-section">
+          <div class="info">
+            <h3 id="name">Name: </h3>
+            <h3 id="year">Year: </h3>
+            <h3 id="course">Strand or Course: </h3>
+            <h3 id="email">Email Address: </h3>
+            <h3 id="note">Note: </h3>
+            <h3 id="due">Due Date: </h3>
+          </div>
+          <div class="action-section">
+            <footer>
+              <button id="complete">Ready</button>
+              <button id="cancel">Cancel</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header>
+      <h1>Active Requests</h1>
+    </header>
+    <main>
+      <div class="list-container"></div>
+    </main>
+    <script type="module" src="/firebase/functions/active/fetchData.js"></script>
+  </body>
+</html>

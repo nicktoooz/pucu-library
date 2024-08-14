@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Library</title>
+    <link rel="stylesheet" href="/assets/css/dashboard/dashboard.css" />
+    <link rel="stylesheet" href="/assets/css/dashboard/dashboard-main-content.css" />
+    <link rel="stylesheet" href="/assets/css/dashboard/dashboard-sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/dashboard/dashboard-highlights.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- SIDEBAR -->
+      <aside class="sidebar collapse">
+        <img id="menu_btn" />
+        <div class="sidebar-content">
+          <div class="sidebar-content-collapse show">
+            <a href="/reports.html" class="control-icon reports" id="reports-btn" title="Reports"><img src="images/dashboard-images/reports.svg" alt="" /></a>
+            <a href="/accepted-requests.html" class="control-icon requests" id="requests-btn" title="Requests"><img src="images/dashboard-images/accepted.svg" alt="" /></a>
+            <a href="/request.html" class="control-icon requests" id="requests-btn" title="Requests"><img src="images/dashboard-images/book.svg" alt="" /></a>
+            <a href="/active-request.html" class="control-icon account" id="account-btn" title="Active Requests"><img src="images/dashboard-images/active.svg" alt="" /></a>
+            <a href="/inventory.html" class="control-icon settings" id="settings-btn" title="Inventory"><img src="images/inventory/inventory.svg" alt="" /></a>
+            <div class="control-icon logout" id="logout-btn"><img src="images/dashboard-images/logout.svg" alt="" /></div>
+          </div>
+          <div class="sidebar-content-extend hide">
+           
+            <a href="/reports.html" class="control-icon reports" id="reports-btn">
+              <img src="images/dashboard-images/reports.svg" alt="" />
+              <p>Reports</p>
+            </a>
+            <a href="/accepted-requests.html" class="control-icon reports" id="reports-btn">
+              <img src="images/dashboard-images/accepted.svg" alt="" />
+              <p>Pending Requests</p>
+            </a>
+            <a href="/request.html" class="control-icon requests" id="requests-btn">
+              <img src="images/dashboard-images/book.svg" alt="" />
+              <p>Incoming Requests</p>
+            </a>
+            <a href="/active-request.html" class="control-icon account" id="account-btn">
+              <img src="images/dashboard-images/active.svg" alt="" />
+              <p>Active Requests</p>
+            </a>
+            <a href="/inventory.html" class="control-icon settings" id="settings-btn">
+              <img src="images/inventory/inventory.svg" alt="" />
+              <p>Inventory</p>
+            </a>
+            <div class="control-icon logout" id="logout-btn">
+              <img src="images/dashboard-images/logout.svg" alt="" />
+              <p>Log-out</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- /SIDEBAR -->
+      <!-- MAIN-CONTENT -->
+      <style>
+      </style>
+      <div class="main-content">
+        <header>
+          <h1>The Library</h1>
+        </header>
+        <main>
+          <section class="upper-part">
+            <section class="monitor-preview-container">
+              <a href="/active-request.html" class="issued preview-buttons">
+                <h1>Active Borrow</h1>
+                <p id="issued">0</p>
+              </a>
+              <a href="/overdue.html" class="overdue preview-buttons">
+                <h1>Overdue</h1>
+                <p id="overdue"></p>
+              </a>
+              <a href="/user-control.html" class="borrowers preview-buttons">
+                <h1>Borrowers</h1>
+                <p id="borrowers"></p>
+              </a>
+              <a href="/OPAC.html" class="visitors preview-buttons">
+                <h1>Visitors Today</h1>
+                <p id="visitors"></p>
+              </a>
+            </section>
+            <div class="canvas-container">
+            <canvas id="curve_chart" class="report-preview-container"></canvas>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="firebase/functions/dashboard/logout.js"></script>
+  <script type="module" src="/firebase/functions/dashboard/fetchData.js"></script>
+  <script src="assets/js/dashboard_anim.js"></script>
+</html>

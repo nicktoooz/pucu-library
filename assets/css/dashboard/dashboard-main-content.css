@@ -1,0 +1,78 @@
+.main-content main {
+  height: 100em;
+}
+.upper-part {
+  display: flex;
+}
+.monitor-preview-container {
+  height: 30em;
+  width: 15em;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  margin: 1em;
+}
+.preview-buttons {
+  flex: 1;
+  background-color: #333;
+  border-radius: 5px;
+  transition: 0.25s ease;
+  color: #eee;
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-buttons:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 5px grey;
+}
+.canvas-container {
+  flex: 1;
+  height: auto;
+  display: flex;
+}
+.monitor-preview-container a {
+  text-decoration: none;
+}
+.issued::after,
+.visitors::after,
+.overdue::after,
+.borrowers::after {
+  content: '';
+  inset: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 9em;
+  background-position-y: 0.8em;
+  filter: invert();
+}
+.issued::after {
+  background-image: url(/images/dashboard-images/issued_books.svg);
+}
+.visitors::after {
+  background-image: url(/images/dashboard-images/visitors.png);
+}
+.overdue::after {
+  background-image: url(/images/dashboard-images/overdue-book.svg);
+}
+.borrowers::after {
+  background-image: url(/images/dashboard-images/library-card.png);
+}
+
+.preview-buttons h1 {
+  margin: 0;
+  margin-top: 1em;
+  font-family: 'Product Sans Medium';
+  margin-left: 0.5em;
+}
+.preview-buttons p {
+  margin: 0;
+  font-family: 'Product Sans Bold';
+
+  font-size: 2.5em;
+  margin-left: 0.2em;
+}

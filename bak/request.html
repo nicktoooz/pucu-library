@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/book-requests/frame.css">
+    <link rel="stylesheet" href="/assets/css/book-requests/main-content.css">
+    <link rel="stylesheet" href="/assets/css/book-requests/list-item.css">
+    <link rel="stylesheet" href="/assets/css/book-requests/preview-section.css">
+    <link rel="stylesheet" href="/assets/css/book-requests/overlay.css">
+    <style>
+        .completed{
+            background-color: white;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            color: #333;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .check-image-container{
+            width: 10em;
+            height: 10em;
+        }
+        .check-image-container img{
+            height: 10em;
+            width: 10em;
+        }
+        #continue-btn{
+            font-size: 1.5em;
+            padding: .5em 1em;
+            border: none;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!--  -->
+
+        <div class="confirm-overlay">
+
+        </div>
+        <!--  -->
+        <header>
+            <h1 style="display: inline;">REQUESTS</h1>
+        </header>  
+        <main>
+            <div class="main-content">
+                <div class="filter-section">
+                    <select name="filter" id="filter">
+                        <option value="*">All</option>
+                        <option value="pending" selected>Pending</option>
+                        <option value="in-progress">In-progress</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+                <div class="list-container-main-content"></div>
+            </div>
+            <div class="preview-section">
+
+                <!-- TODO: IN-PROGRESS -->
+                <div class="completed">
+                    <div class="check-image-container">
+                        <img src="/images/requests/check.png" alt="">
+                    </div>
+                    <h1 id="message">The request has been accepted</h1>
+                    <button id="continue-btn">Continue</button>
+
+                </div>
+                <div class="request-id-container">
+                    <div id="request-id">####-####</div>
+                </div>
+                <div class="borrowed-book-list-container">
+                </div>
+                <div class="request-info">
+                    <div class="info-container">
+                        <p class="label">Name:&nbsp</p>
+                    <p id="borrower-name"></p>
+                    </div>
+                    <div class="info-container">
+                        <p class="label">Year:&nbsp</p>
+                    <p id="borrower-year"></p>
+                    </div>
+                    <div class="info-container">
+                        <p class="label">Course:&nbsp</p>
+                    <p id="borrower-course"></p>
+                    </div>
+                    <div class="info-container">
+                        <p class="label">Section:&nbsp</p>
+                    <p id="borrower-section"></p>
+                    </div>
+                </div>
+                <div class="action-button-container">
+                    <button id="accept-btn" class="action-btn" >Accept</button>
+                    <button id="reject-btn" class="action-btn">Reject</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/firebase/functions/render-data.js"></script>
+</body>
+</html>

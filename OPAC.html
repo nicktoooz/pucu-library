@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/OPAC/frame.css" />
+    <link rel="stylesheet" href="/assets/css/OPAC/main.css" />
+    <style>
+      .list-container .list {
+  background-color: #e7e7ed;
+  height: 4em;
+  color: #333;
+  border-radius: 5px;
+  position: relative;
+  width: 98%;
+  cursor: pointer;
+  margin-left: 1%;
+  box-shadow: 2px 2px 4px #cccccc;
+  transition: scale 0.5s ease;
+}
+.list:hover {
+  scale: 1.02;
+}
+.list-container .list::before {
+  content: '';
+  position: absolute;
+  background-color: #adadad;
+  bottom: 0;
+  height: 1px;
+  width: 90%;
+  transform: translateX(5%);
+}
+.list-container .list p {
+  margin: 0;
+}
+.list #title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 1em;
+  padding-top: 0.2em;
+}
+.list #bookId {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 1em;
+  padding-top: 0.2em;
+}
+.list #author {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 1em;
+  padding-bottom: 0.2em;
+}
+.list #genre {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 1em;
+  padding-bottom: 0.2em;
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>PUCU Library Usage Form</h1>
+    </header>
+    <main>
+      <form class="form-container">
+        <div class="input-container">
+          <label for="last-name">Last Name</label>
+          <input type="text" name="last-name" id="last-name" placeholder="Last Name" />
+        </div>
+        <div class="input-container">
+          <label for="first-name">First Name</label>
+          <input type="text" name="first-name" id="first-name" placeholder="First Name" />
+        </div>
+        <div class="extension">
+          <div class="input-container">
+            <label for="middle-name">Middle Name</label>
+            <input type="text" name="middle-name" id="middle-name" placeholder="Middle Initial" />
+          </div>
+          <div class="input-container">
+            <label for="extension">Extension</label>
+            <input type="text" name="extension" id="extension" placeholder="eg: III, Jr, Sr" />
+          </div>
+        </div>
+        <div class="input-container">
+          <label for="year">Year</label>
+          <select name="year" id="year" class="dropdown">
+            <option value="grade11">Grade 11</option>
+            <option value="grade12">Grade 12</option>
+            <option value="firstyear">1st Year</option>
+            <option value="secondyear">2nd Year</option>
+            <option value="thirdyear">3rd Year</option>
+            <option value="fourthyear">4th Year</option>
+          </select>
+        </div>
+
+        <div class="input-container">
+          <label for="course">Course</label>
+          <select name="course" id="course" class="dropdown"></select>
+        </div>
+        <div class="input-container">
+          <label for="purpose">Purpose</label>
+          <input type="text" name="purpose" id="" placeholder="Purpose" />
+        </div>
+        <footer>
+          <button type="submit" id="submit-btn" name="submit">Submit</button>
+        </footer>
+      </form>
+      
+      <div class="opt">
+        <div class="search-wrapper">
+          <div class="search-container">
+              <h1>Search Books</h1>
+              <form action="" id="search-query">
+                <input type="search" id="searchbox" placeholder="Seach book title, author or genre">
+              </form>
+          </div>
+          <div class="list-container">
+          </div>
+        </div>
+       
+      </div>
+    </main>
+    <script type="module" src="/firebase/functions/OPAC/uploadData.js"></script>
+    <script type="module" src="/firebase/functions//OPAC/searchBooks.js"></script>
+  </body>
+</html>

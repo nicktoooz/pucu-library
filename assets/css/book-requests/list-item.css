@@ -1,0 +1,24 @@
+
+.list-item{
+    height: 4em;
+    background-color: #e6e9ff;
+    display: flex;
+    padding: 0px 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 2px;
+    color: #333;
+    box-shadow: 2px 2px 2px #c4c4c4;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.top{
+    display: flex;
+    justify-content: space-between ;
+}
+#name, #rid, #date{
+    margin-block: 0px;
+}
+#rid{
+    font-size: 1.5em;
+}

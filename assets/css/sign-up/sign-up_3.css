@@ -1,0 +1,27 @@
+#work-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#work-details input {
+  width: 40em;
+  height: 5em;
+  padding-left: 2em;
+  border: none;
+  border-radius: 5px;
+}
+#time{
+    width: 18em !important;
+
+}
+.time-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.time-container .col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}

@@ -1,0 +1,35 @@
+@import url(../../../fonts/product-sans-font.css);
+body {
+  margin: 0;
+  font-family: 'Product Sans Regular';
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.wrapper {
+  height: 100dvh;
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+}
+.main-content {
+  flex: 1;
+  overflow-y: scroll;
+}
+.main-content::-webkit-scrollbar {
+  display: none;
+}
+.main-content header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+}
+.profile-picture-container {
+  height: 5em;
+  width: 5em;
+  background-color: blue;
+  border-radius: 50%;
+}

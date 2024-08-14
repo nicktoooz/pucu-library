@@ -1,0 +1,38 @@
+#user-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#user-info-form input {
+  width: 40em;
+  height: 5em;
+  padding-left: 2em;
+  border: none;
+  border-radius: 5px;
+  
+}
+#user-info-form input:focus {
+  outline: none;
+}
+
+#gender{
+    height: 5em;
+    width: 10em;
+    border-radius: 5px;
+    border: none;
+    padding: 0 2em;
+}
+.temp{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+
+}
+#phone{
+    width: 29em !important;
+}
+#phone-label{
+    position: absolute;
+    transform: translateX(9em)translateY(-2em);
+
+}

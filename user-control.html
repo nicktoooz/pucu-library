@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url(/fonts/product-sans-font.css);
+      body {
+        margin: 0;
+        height: 100vh;
+        font-family: 'Product Sans Regular';
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        height: 4em;
+        background-color: #333;
+        color: #eee;
+        display: flex;
+        align-items: center;
+      }
+      header h1 {
+        margin: 0;
+      }
+      main {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+      }
+      .sidebar {
+        width: 16em;
+        background-color: #222;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .sidebar button {
+        font-size: 1.5em;
+        height: 3em;
+      }
+      .main-content {
+        flex: 1;
+        display: flex;
+      }
+      .main-content h1 {
+        margin-left: 1em;
+      }
+      .borrower-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .faculty-group {
+        display: none;
+        flex: 1;
+        flex-direction: column;
+      }
+      .main-content header {
+        background-color: transparent;
+        color: #333;
+      }
+      .main-content header select {
+        font-size: 1.5em;
+        margin-left: auto;
+        margin-right: 1em;
+        background-color: #333;
+        color: #eee;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+      }
+      .list-container {
+        flex: 1;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        overflow-y: scroll;
+      }
+      .borrower-group .list-container {
+      }
+      .faculty-group .list-container {
+      }
+      .list-container .item {
+        height: 4em;
+        width: 98%;
+        background-color: #333;
+        color: #eee;
+        border-radius: 5px;
+        margin-top: 3px;
+        margin-left: 1%;
+        position:  relative;
+      }
+      .list-container .item p {
+        margin: .4em;
+      }
+      .item #name,
+      .item #student-id,
+      .item #status {
+        position: absolute;
+
+      }
+      .item #name{
+        top: 0;
+        left: 0;
+        font-family: 'Product Sans Bold';
+      }
+      .item #student-id{
+        bottom: 0;
+        left: 0;
+      }
+      .item #status{
+        right: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>User Account List</h1>
+    </header>
+    <main>
+      <aside class="sidebar">
+        <button id="borrower-btn">Borrowers</button>
+        <button id="librarian-btn">Librarians</button>
+      </aside>
+      <div class="main-content">
+        <div class="borrower-group">
+          <header>
+            <h1>Borrowers</h1>
+          </header>
+          <div class="list-container">
+            <div class="item">
+              <p id="name">John Doe</p>
+              <p id="student-id">3 BSCS</p>
+              <p id="status">Active</p>
+            </div>
+          </div>
+        </div>
+        <div class="faculty-group">
+          <header>
+            <h1>Librarians</h1>
+            <!-- <select name="" id="">
+              <option value="">Active</option>
+              <option value="">Inactive</option>
+            </select> -->
+          </header>
+          <div class="list-container">
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/firebase/functions/user-control/render-data.js"></script>
+  </body>
+</html>

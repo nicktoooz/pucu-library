@@ -1,0 +1,8 @@
+.confirm-overlay{
+    height: 100vh;
+    display: none;
+    position: absolute;
+    background-color: #272727e7;
+    z-index: 10;
+    inset: 0; 
+}

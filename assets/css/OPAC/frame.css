@@ -1,0 +1,30 @@
+@import url(/fonts/product-sans-font.css);
+
+*{
+    font-family: 'Product Sans Regular';
+}
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
+header{
+    height : 4em;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    color: #EEE;
+}
+header h1{
+    margin-left: .5em;
+}
+main{
+    flex: 1;
+    display: flex;
+    height: 80vh;
+    overflow: hidden;
+}

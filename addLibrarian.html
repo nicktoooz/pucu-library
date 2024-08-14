@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        height: 4em;
+        display: flex;
+        background-color: #333;
+        color: #eee;
+        align-items: center;
+      }
+      header h1 {
+        margin-left: 1em;
+      }
+      main {
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .input-container {
+        display: flex;
+        flex-direction: column;
+      }
+      form {
+        width: 40em;
+        gap: 3em;
+        display: flex;
+        flex-direction: column;
+      }
+      form input {
+        font-size: 1.5em;
+        padding: 0.8em 1em;
+        border-radius: 5px;
+        border: 1px solid #333;
+      }
+      label {
+        font-size: 1.2em;
+      }
+      form input[type='submit'],
+      #proceedBtn {
+        border: none;
+        align-self: end;
+        padding: 0.5em 1em;
+        background-color: #333;
+        color: #eee;
+      }
+      .overlay {
+        background-color: #000000b8;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .overlay-content {
+        width: 50em;
+        height: 39em;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #eee;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+      }
+      .message {
+        margin: 0 2em;
+      }
+      #proceedBtn {
+        font-size: 1.3em;
+        border-radius: 5px;
+        margin: 1em 2em;
+      }
+      .loading-overlay {
+        background-color: #000000b8;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 5;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes ldio-78x1dbmgef9 {
+        0% {
+          top: 94px;
+          left: 94px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: -1px;
+          left: -1px;
+          width: 190px;
+          height: 190px;
+          opacity: 0;
+        }
+      }
+      .ldio-78x1dbmgef9 div {
+        position: absolute;
+        border-width: 6px;
+        border-style: solid;
+        opacity: 1;
+        border-radius: 50%;
+        animation: ldio-78x1dbmgef9 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .ldio-78x1dbmgef9 div:nth-child(1) {
+        border-color: #ffffff;
+        animation-delay: 0s;
+      }
+      .ldio-78x1dbmgef9 div:nth-child(2) {
+        border-color: #00d8ff;
+        animation-delay: -0.5s;
+      }
+      .loadingio-spinner-ripple-8h0ux2bkmdp {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        overflow: hidden;
+        background: none;
+      }
+      .ldio-78x1dbmgef9 {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateZ(0) scale(1);
+        backface-visibility: hidden;
+        transform-origin: 0 0; /* see note above */
+      }
+      .ldio-78x1dbmgef9 div {
+        box-sizing: content-box;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="success-overlay"></div>
+    <div class="loading-overlay">
+      <div class="loadingio-spinner-ripple-8h0ux2bkmdp">
+        <div class="ldio-78x1dbmgef9">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay">
+      <div class="overlay-content">
+        <header>
+          <h1>Librarian Account Creation Confirmation</h1>
+        </header>
+        <div class="message">
+          <h2>Before proceeding, please review the following important information</h2>
+          <p>You are in the process of creating a librarian account in our Library Management System. This account will grant access to various tools and resources necessary for effective library management.</p>
+          <p>
+            &bull;<strong>Secure Password:</strong> Set a strong and secure password for the librarian's account.A strong password should include a mix of uppercase letters, lowercase letters, numbers, and special characters. Please make sure the password is both secure and memorable, and communicate it securely to the librarian. <br />
+            <br />&bull;<strong>Responsibilities:</strong> Ensure that the librarian is aware of their responsibilities, which include managing library resources, assisting patrons, and ensuring a smooth operation of the library. Clear communication of roles and expectations is essential for effective library management. <br />
+            <br />
+            &bull;<strong>Code of Conduct:</strong> Familiarize the librarian with our library's code of conduct. They should adhere to these guidelines when interacting with patrons and managing library resources. <br /><br />
+            By proceeding, you confirm that you have reviewed and addressed these points. The librarian will be granted access to the Library Management System with the provided information. If you have any questions or need assistance, please don't hesitate to contact us. <br />
+            <br />Thank you for your dedication to our library.
+          </p>
+        </div>
+        <button id="proceedBtn">Proceed</button>
+      </div>
+    </div>
+    <header>
+      <h1>Add Librarian</h1>
+    </header>
+    <main>
+      <form action="">
+        <div class="input-container">
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="" placeholder="Enter Email Address" />
+        </div>
+        <div class="input-container">
+          <label for="password">Email Address</label>
+          <input type="password" name="password" id="" placeholder="Enter Password" />
+        </div>
+        <input type="submit" name="submit" value="Add Librarian" />
+      </form>
+    </main>
+    <script type="module" src="/firebase/createAccount.js"></script>
+  </body>
+</html>

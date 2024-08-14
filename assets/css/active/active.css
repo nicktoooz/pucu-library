@@ -1,0 +1,162 @@
+@import url(/fonts/product-sans-font.css);
+
+* {
+  font-family: 'Product Sans Regular';
+}
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+header {
+  height: 4em;
+  background-color: #333;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #eee;
+}
+main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+.list-container {
+  flex: 1;
+  overflow-y: scroll;
+}
+.list-container .item {
+  height: 4em;
+  width: 98%;
+  background-color: #f5f5ff;
+  box-shadow: 3px 3px 3px #d2d2d2;
+  margin-top: 3px;
+  border-radius: 5px;
+  margin-left: 1%;
+  position: relative;
+}
+.item p {
+  margin: 0;
+  position: absolute;
+  margin: 0.3em;
+}
+.item #request-id {
+  top: 0;
+  left: 0;
+  font-family: 'Product Sans Bold';
+}
+.item #from {
+  bottom: 0;
+  left: 0;
+}
+.item #date {
+  right: 0;
+  top: 0;
+}
+.item #status{
+  bottom: 0;
+  right: 0;
+  color: #00ff00;
+}
+
+
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #000000ca;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.overlay .card {
+  width: 50em;
+  height: 30em;
+  background-color: #eee;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+#close-btn{
+  width: 3em;
+  height: 2em;
+  background-color: #ba000d;
+   position: absolute;
+  top: 0;
+  right: 0;
+}
+.book-list-container {
+  flex: 1.5;
+  padding-top: 0.5em;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.book-list-container .book-item {
+  height: 4em;
+  background-color: #ccc;
+  margin-top: 3px;
+  width: 96%;
+  margin-left: 2%;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #c0c0c0;
+ }
+.book-item #title,
+.book-item #author,
+.book-item #genre {
+  margin: 0;
+  position: absolute;
+  margin: .3em;
+}
+.book-item #title {
+  top: 0;
+  left: 0;
+}
+.book-item #author {
+    left: 0;
+    bottom: 0;
+}
+.book-item #genre {
+    top: 0;
+    right: 0;
+}
+
+.action-section {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.action-section footer{
+  height: 4em;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.action-section footer button{
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  padding: .4em 1em;
+  color: #eee;
+}
+
+.action-section footer #complete {
+  background-color: #002884;
+}
+.action-section footer #cancel {
+  background-color: #ba000d;
+}
+.action-section footer #complete:hover {
+  background-color: #1825de;
+}
+.action-section footer #cancel:hover {
+  background-color: #da212e;
+}

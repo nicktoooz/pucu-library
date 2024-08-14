@@ -1,0 +1,24 @@
+.highlights {
+  background-color: #333;
+  transition: 0.5s ease;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+.highlights.extend {
+  width: 18em;
+}
+.highlights.collapse {
+  width: 1.5em;
+}
+#highlights_trigger {
+  width: 1.5em;
+  height: 100%;
+  background-color: #ccc;
+}
+.highlights-content {
+  position: absolute;
+  width: 16.5em;
+  height: 100%;
+  transform: translateX(1.5em);
+}
